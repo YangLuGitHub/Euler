@@ -1,3 +1,8 @@
+# If we list all the natural numbers below 10 that are multiples
+# of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+#
+# Find the sum of all the multiples of 3 or 5 below 1000.
+#
 # Interestingly, the first Project Euler question seems
 # to be similar in concept to "FizzBuzz", requiring the
 # programmer to sum numbers that are modulo 3 or 5
@@ -9,7 +14,7 @@ def run():
         if (x % 3) == 0 or (x % 5) == 0:
             divisor_sum += x
 
-    print("The solution is %d" % divisor_sum)
+    print("The solution is {0}".format(divisor_sum))
     # Sample Output:
     # The solution is 233168
 
