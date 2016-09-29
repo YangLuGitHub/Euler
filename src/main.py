@@ -1,11 +1,11 @@
+# Generic benchmarking code
+# perf_counter() used for high precision
+from time import perf_counter
+
 # Constant Declarations
 MAX_SOLVED = 5  # Max number of Euler problems solved
 BORDER = "-----"  # Border string printed around execution output of Problem#.py
 DEFAULT = str(MAX_SOLVED)  # Defaults to highest solved problem2
-
-# Imports
-for x in range(MAX_SOLVED):
-    exec("from scripts import Problem{0}".format(x + 1))
 
 
 # Print error message for invalid inputs
@@ -26,10 +26,6 @@ def isint(value):
         return False
 
 
-# Generic benchmarking code
-# perf_counter() used for high precision
-from time import perf_counter
-
 input_value = DEFAULT
 
 # Do-while emulation
@@ -37,6 +33,9 @@ while True:
     input_value = input("Evaluate Project Euler Problem #")
     if isint(input_value):
         break
+
+# Imports
+exec("from scripts import Problem{0}".format(input_value))
 
 perf_counter()
 
