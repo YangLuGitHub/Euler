@@ -1,5 +1,5 @@
 # Constant Declarations
-MAX_SOLVED = 2  # Max number of Euler problems solved
+MAX_SOLVED = 3  # Max number of Euler problems solved
 BORDER = "-----"  # Border string printed around execution output of Problem#.py
 DEFAULT = str(MAX_SOLVED)  # Defaults to highest solved problem2
 
