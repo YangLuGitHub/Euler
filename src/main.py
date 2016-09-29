@@ -3,14 +3,14 @@
 from time import perf_counter
 
 # Constant Declarations
-MAX_SOLVED = 5  # Max number of Euler problems solved
+MAX_SOLVED = 6  # Max number of Euler problems solved
 BORDER = "-----"  # Border string printed around execution output of Problem#.py
 DEFAULT = str(MAX_SOLVED)  # Defaults to highest solved problem2
 
 
 # Print error message for invalid inputs
 def print_input_err():
-    print("Please input an integer in the range 1-{0}".format(MAX_SOLVED))
+    print("Input not in the range 1-{0}. Using solution for Problem #{0}.".format(MAX_SOLVED))
 
 
 # Function to validate input
@@ -26,13 +26,10 @@ def isint(value):
         return False
 
 
-input_value = DEFAULT
-
-# Do-while emulation
-while True:
-    input_value = input("Evaluate Project Euler Problem #")
-    if isint(input_value):
-        break
+# If input is invalid, default to highest solved problem
+input_value = input("Evaluate Project Euler Problem #")
+if not isint(input_value):
+    input_value = DEFAULT
 
 # Imports
 exec("from scripts import Problem{0}".format(input_value))
