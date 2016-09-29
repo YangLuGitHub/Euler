@@ -57,9 +57,9 @@ def adjust_sieve(sieve, max_value):
 
 def run():
     sieve = prime_sieve(MAX_DIVISOR)
-    print("Prime sieve {0}".format(sieve))
+    # print("Prime sieve {0}".format(sieve))
     adjusted_sieve = adjust_sieve(sieve, MAX_DIVISOR)
-    print("Adjusted factors {0}".format(adjusted_sieve))
+    # print("Adjusted factors {0}".format(adjusted_sieve))
 
     product = 1
     for element in adjusted_sieve:
@@ -69,9 +69,9 @@ def run():
 
     for i in range(1, MAX_DIVISOR + 1):
         div_result = divmod(product, i)
-        print("{0} / {1} = {2} with remainder {3}".format(product, i, div_result[0], div_result[1]))
+        # print("{0} / {1} = {2} with remainder {3}".format(product, i, div_result[0], div_result[1]))
 
-        # Sample Output:
+        # Sample Output with all debugging messages:
         # Prime sieve {2, 3, 5, 7, 11, 13, 17, 19}
         # Adjusted factors {5, 7, 9, 11, 13, 16, 17, 19}
         # Product of all maximum prime factors under 20 is 232792560
