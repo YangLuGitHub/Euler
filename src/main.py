@@ -3,7 +3,7 @@
 from time import perf_counter
 
 # Constant Declarations
-MAX_SOLVED = 8  # Max number of Euler problems solved
+MAX_SOLVED = 9  # Max number of Euler problems solved
 BORDER = "-----"  # Border string printed around execution output of Problem#.py
 DEFAULT = str(MAX_SOLVED)  # Defaults to highest solved problem2
 
@@ -38,6 +38,6 @@ perf_counter()
 
 print(BORDER)
 exec("Problem{0}.run()".format(input_value))
-print(BORDER)
-
+print("")
 print("Total running time for Problem{0}.py is {1} seconds".format(input_value, perf_counter()))
+print(BORDER)
