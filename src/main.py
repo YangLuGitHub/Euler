@@ -28,6 +28,19 @@ def isint(value):
 
 # If input is invalid, default to highest solved problem
 input_value = input("Evaluate Project Euler Problem #")
+if input_value == "all":
+    print(BORDER)
+    for i in range(1, MAX_SOLVED + 1):
+        exec("from scripts import Problem{0}".format(i))
+
+        perf_counter()
+
+        print("Problem{0}.py:".format(i))
+        exec("Problem{0}.run()".format(i))
+        print("")
+        print("Total running time for Problem{0}.py is {1} seconds".format(i, perf_counter()))
+        print(BORDER)
+    exit(0)
 if not isint(input_value):
     input_value = DEFAULT
 
