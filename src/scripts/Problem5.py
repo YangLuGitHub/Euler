@@ -36,7 +36,7 @@ def prime_sieve(sieve_up_to):
             while sieve_iterator < max_num:
                 sieve[sieve_iterator] = False
                 sieve_iterator += i
-    for j in range(i, max_num):
+    for j in range(i + 1, max_num):
         if sieve[j]:
             result.add(j)
     return result
