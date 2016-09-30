@@ -12,8 +12,6 @@
 # congruence-of-squares probabilistic factorization exist
 # but are not implemented here due to a lack of need for
 # optimization.
-
-
 TO_FACTOR = 600851475143
 
 
@@ -33,8 +31,10 @@ def run():
     for prime_factor in naive_factorize(TO_FACTOR):
         print("Found factor {0}".format(prime_factor))
 
-        # Sample Output:
-        # Found factor 71
-        # Found factor 839
-        # Found factor 1471
-        # Found factor 6857
+# Sample Output:
+# Found factor 71
+# Found factor 839
+# Found factor 1471
+# Found factor 6857
+#
+# Total running time for Problem3.py is 0.000626561914682896 seconds

@@ -15,7 +15,6 @@
 #
 # We see that the other basic solution of simply iteratively
 # adding numbers will work.
-
 UPPER_BOUND = 4000000
 
 
@@ -25,16 +24,16 @@ def run():
     fib_current = 1
 
     # Loop until fibonacci numbers get too large
+    # Fibonacci computed iteratively
     while fib_current <= UPPER_BOUND:
         if fib_current % 2 == 0:
             even_fib_sum += fib_current
-
         fib_new = fib_last + fib_current
         fib_last = fib_current
         fib_current = fib_new
+    print("The sum of even-valued fibonacci numbers not exceeding {0} is {1}".format(UPPER_BOUND, even_fib_sum))
 
-    print("The solution is {0}".format(even_fib_sum))
-    # Sample Output:
-    # The solution is 4613732
-
-    # Fibonacci computed iteratively
+# Sample Output:
+# The sum of even-valued fibonacci numbers not exceeding 4000000 is 4613732
+#
+# Total running time for Problem2.py is 0.0001370123105817635 seconds

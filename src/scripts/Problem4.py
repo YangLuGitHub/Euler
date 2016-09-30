@@ -56,5 +56,7 @@ def run():
         if has_three_digit_factors(make_palindrome(source_num)):
             return
 
-            # Sample Output:
-            # Found palindrome 906609 with three-digit divisors 913 and 993
+# Sample Output:
+# Found palindrome 906609 with three-digit divisors 913 and 993
+#
+# Total running time for Problem4.py is 0.027365514976420542 seconds

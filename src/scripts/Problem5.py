@@ -67,31 +67,36 @@ def run():
 
     print("Product of all maximum prime factors under {0} is {1}".format(MAX_DIVISOR, product))
 
-    for i in range(1, MAX_DIVISOR + 1):
-        div_result = divmod(product, i)
-        # print("{0} / {1} = {2} with remainder {3}".format(product, i, div_result[0], div_result[1]))
+    # for i in range(1, MAX_DIVISOR + 1):
+    #     div_result = divmod(product, i)
+    #     print("{0} / {1} = {2} with remainder {3}".format(product, i, div_result[0], div_result[1]))
 
-        # Sample Output with all debugging messages:
-        # Prime sieve {2, 3, 5, 7, 11, 13, 17, 19}
-        # Adjusted factors {5, 7, 9, 11, 13, 16, 17, 19}
-        # Product of all maximum prime factors under 20 is 232792560
-        # 232792560 / 1 = 232792560 with remainder 0
-        # 232792560 / 2 = 116396280 with remainder 0
-        # 232792560 / 3 = 77597520 with remainder 0
-        # 232792560 / 4 = 58198140 with remainder 0
-        # 232792560 / 5 = 46558512 with remainder 0
-        # 232792560 / 6 = 38798760 with remainder 0
-        # 232792560 / 7 = 33256080 with remainder 0
-        # 232792560 / 8 = 29099070 with remainder 0
-        # 232792560 / 9 = 25865840 with remainder 0
-        # 232792560 / 10 = 23279256 with remainder 0
-        # 232792560 / 11 = 21162960 with remainder 0
-        # 232792560 / 12 = 19399380 with remainder 0
-        # 232792560 / 13 = 17907120 with remainder 0
-        # 232792560 / 14 = 16628040 with remainder 0
-        # 232792560 / 15 = 15519504 with remainder 0
-        # 232792560 / 16 = 14549535 with remainder 0
-        # 232792560 / 17 = 13693680 with remainder 0
-        # 232792560 / 18 = 12932920 with remainder 0
-        # 232792560 / 19 = 12252240 with remainder 0
-        # 232792560 / 20 = 11639628 with remainder 0
+# Sample Output:
+# Product of all maximum prime factors under 20 is 232792560
+#
+# Total running time for Problem5.py is 0.0001831962354969647 seconds
+#
+# Sample Output with all debugging messages:
+# Prime sieve {2, 3, 5, 7, 11, 13, 17, 19}
+# Adjusted factors {5, 7, 9, 11, 13, 16, 17, 19}
+# Product of all maximum prime factors under 20 is 232792560
+# 232792560 / 1 = 232792560 with remainder 0
+# 232792560 / 2 = 116396280 with remainder 0
+# 232792560 / 3 = 77597520 with remainder 0
+# 232792560 / 4 = 58198140 with remainder 0
+# 232792560 / 5 = 46558512 with remainder 0
+# 232792560 / 6 = 38798760 with remainder 0
+# 232792560 / 7 = 33256080 with remainder 0
+# 232792560 / 8 = 29099070 with remainder 0
+# 232792560 / 9 = 25865840 with remainder 0
+# 232792560 / 10 = 23279256 with remainder 0
+# 232792560 / 11 = 21162960 with remainder 0
+# 232792560 / 12 = 19399380 with remainder 0
+# 232792560 / 13 = 17907120 with remainder 0
+# 232792560 / 14 = 16628040 with remainder 0
+# 232792560 / 15 = 15519504 with remainder 0
+# 232792560 / 16 = 14549535 with remainder 0
+# 232792560 / 17 = 13693680 with remainder 0
+# 232792560 / 18 = 12932920 with remainder 0
+# 232792560 / 19 = 12252240 with remainder 0
+# 232792560 / 20 = 11639628 with remainder 0

@@ -51,6 +51,8 @@ def run():
     i = 10000
     print("sieve[{0}]: {1}".format(i, sieve[i]))
 
-    # Sample Output:
-    # Prime numbers in size 110000 sieve: 10453
-    # sieve[10000]: 104743
+# Sample Output:
+# Prime numbers in size 110000 sieve: 10453
+# sieve[10000]: 104743
+#
+# Total running time for Problem7.py is 0.04801486096072827 seconds

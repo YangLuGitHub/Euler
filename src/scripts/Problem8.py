@@ -89,5 +89,7 @@ def run():
 
     print("Highest-valued chain is {0} with product {1}".format(max_string, max_product))
 
-    # Sample Output:
-    # Highest-valued chain is 5576689664895 with product 23514624000
+# Sample Output:
+# Highest-valued chain is 5576689664895 with product 23514624000
+#
+# Total running time for Problem8.py is 0.0006465749488128165 seconds

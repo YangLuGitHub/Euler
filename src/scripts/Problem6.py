@@ -34,5 +34,7 @@ def run():
     print("square of sum - sum of squares = {0} - {1} = {2}".format(square_of_sum, sum_of_squares,
                                                                     square_of_sum - sum_of_squares))
 
-    # Sample Output:
-    # square of sum - sum of squares = 25502500 - 338350 = 25164150
+# Sample Output:
+# square of sum - sum of squares = 25502500 - 338350 = 25164150
+#
+# Total running time for Problem6.py is 0.00010468356314112268 seconds
