@@ -40,6 +40,7 @@ def triangular_number_n(n):
 
 
 def run():
+    log_file = open("logs/Problem12.txt", "w")
     sieve = list(optimized_sieve(MAX_N))
     for n in range(1, MAX_N):
         if n % 2 == 0:
@@ -69,8 +70,8 @@ def run():
                 #       .format(factor_1, factor_2, prime, exponent_count))
             if factor_1 == factor_2 == 1:
                 # print("Factorization complete.")
-                # print("Total divisor count for T_{0} = {1} is {2}"
-                #       .format(n, triangular_number_n(n), factor_count))
+                print("Total divisor count for T_{0} = {1} is {2}"
+                      .format(n, triangular_number_n(n), factor_count), file=log_file)
                 # input("Press Enter to continue...")
                 break
         if factor_count > 500:
