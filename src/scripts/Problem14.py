@@ -30,6 +30,7 @@
 
 
 def run():
+    # log_file = open("logs/Problem14.txt", "w")
     chain_dictionary = {}
 
     max_chain_source = 1
@@ -55,6 +56,8 @@ def run():
         if chain_length > max_chain_length:
             max_chain_length = chain_length
             max_chain_source = n
+    # for key in chain_dictionary.keys():
+    #     print("Collatz({0}) = {1}".format(key, chain_dictionary[key]), file = log_file)
     print("Max chain length is {0} from number {1}".format(max_chain_length + 1, max_chain_source))
 
 # Sample Output:
