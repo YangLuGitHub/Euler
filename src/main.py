@@ -3,7 +3,7 @@
 from time import perf_counter
 
 # Constant Declarations
-MAX_SOLVED = 11  # Max number of Euler problems solved
+MAX_SOLVED = 12  # Max number of Euler problems solved
 BORDER = "-----"  # Border string printed around execution output of Problem#.py
 DEFAULT = str(MAX_SOLVED)  # Defaults to highest solved problem2
 
@@ -26,19 +26,22 @@ def isint(value):
         return False
 
 
+# Run Problem<solution_num>.py
+def run_solution(solution_num):
+    print("Problem{0}.py:".format(solution_num))
+    start = perf_counter()
+    exec("Problem{0}.run()".format(solution_num))
+    print("")
+    print("Total running time for Problem{0}.py is {1} seconds".format(solution_num, perf_counter() - start))
+
+
 # If input is invalid, default to highest solved problem
 input_value = input("Evaluate Project Euler Problem #")
 if input_value == "all":
     print(BORDER)
     for i in range(1, MAX_SOLVED + 1):
         exec("from scripts import Problem{0}".format(i))
-
-        perf_counter()
-
-        print("Problem{0}.py:".format(i))
-        exec("Problem{0}.run()".format(i))
-        print("")
-        print("Total running time for Problem{0}.py is {1} seconds".format(i, perf_counter()))
+        run_solution(i)
         print(BORDER)
     exit(0)
 if not isint(input_value):
@@ -47,10 +50,6 @@ if not isint(input_value):
 # Imports
 exec("from scripts import Problem{0}".format(input_value))
 
-perf_counter()
-
 print(BORDER)
-exec("Problem{0}.run()".format(input_value))
-print("")
-print("Total running time for Problem{0}.py is {1} seconds".format(input_value, perf_counter()))
+run_solution(input_value)
 print(BORDER)
