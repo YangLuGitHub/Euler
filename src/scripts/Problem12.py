@@ -30,8 +30,10 @@
 #
 # 2^9 > 512, so not that many unique prime factors are necessary to exceed 500 total divisors.
 # Nevertheless, sieve primes up to 100k, just to be safe.
+#
+# Optimization can be made by recognizing n and n+1 don't share any divisors except 1, and
+# thus factoring them separately.
 from Problem10 import optimized_sieve
-
 MAX_N = 100000
 
 
@@ -42,6 +44,7 @@ def triangular_number_n(n):
 def run():
     # log_file = open("logs/Problem12.txt", "w")
     sieve = list(optimized_sieve(MAX_N))
+    # print("Sieve size is {0}".format(len(sieve)))
     for n in range(1, MAX_N):
         if n % 2 == 0:
             factor_1 = n // 2
@@ -54,25 +57,49 @@ def run():
         # print("Factorizing Triangular number {0} = {1} = {2} * {3}"
         #     .format(n, factor_1 * factor_2, factor_1, factor_2))
 
+        # for prime in sieve:
+        #     exponent_count = 0
+        #     while factor_1 % prime == 0:
+        #         # print("Factorizing {0} by {1} = {2} * {1}".format(factor_1, prime, factor_1 // prime))
+        #         exponent_count += 1
+        #         factor_1 //= prime
+        #     while factor_2 % prime == 0:
+        #         # print("Factorizing {0} by {1} = {2} * {1}".format(factor_2, prime, factor_2 // prime))
+        #         exponent_count += 1
+        #         factor_2 //= prime
+        #     if exponent_count > 0:
+        #         factor_count *= (exponent_count + 1)
+        #         # print("Factorized factors to {0} * {1} * {2}^{3}"
+        #         #       .format(factor_1, factor_2, prime, exponent_count))
+        #     if factor_1 == factor_2 == 1:
+        #         # print("Factorization complete.")
+        #         # print("Total divisor count for T_{0} = {1} is {2}"
+        #         #       .format(n, triangular_number_n(n), factor_count), file=log_file)
+        #         # input("Press Enter to continue...")
+        #         break
         for prime in sieve:
-            exponent_count = 0
+            exponent_count = 1
             while factor_1 % prime == 0:
-                # print("Factorizing {0} by {1} = {2} * {1}".format(factor_1, prime, factor_1 // prime))
                 exponent_count += 1
                 factor_1 //= prime
+            factor_count *= exponent_count
+            if factor_1 == 1:
+                break
+            if prime * prime > factor_1:
+                # Factor is now prime
+                factor_count *= 2
+                break
+        for prime in sieve:
+            exponent_count = 1
             while factor_2 % prime == 0:
-                # print("Factorizing {0} by {1} = {2} * {1}".format(factor_2, prime, factor_2 // prime))
                 exponent_count += 1
                 factor_2 //= prime
-            if exponent_count > 0:
-                factor_count *= (exponent_count + 1)
-                # print("Factorized factors to {0} * {1} * {2}^{3}"
-                #       .format(factor_1, factor_2, prime, exponent_count))
-            if factor_1 == factor_2 == 1:
-                # print("Factorization complete.")
-                # print("Total divisor count for T_{0} = {1} is {2}"
-                #       .format(n, triangular_number_n(n), factor_count), file=log_file)
-                # input("Press Enter to continue...")
+            factor_count *= exponent_count
+            if factor_2 == 1:
+                break
+            if prime * prime > factor_2:
+                # Factor is now prime
+                factor_count *= 2
                 break
         if factor_count > 500:
             print("Triangular number {0} = {1} has {2} factors".format(n, triangular_number_n(n), factor_count))
@@ -81,4 +108,4 @@ def run():
 # Sample Output:
 # Triangular number 12375 = 76576500 has 576 factors
 #
-# Total running time for Problem12.py is 1.8690434282840618 seconds
+# Total running time for Problem12.py is 0.13857281408917604 seconds
