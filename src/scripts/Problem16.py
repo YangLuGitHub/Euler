@@ -21,7 +21,6 @@
 # It's obviously inefficient as far as algorithms go, but it shows
 # the process of addition with carry clearly.
 from math import ceil, log
-
 EXPONENT = 1000
 DIGIT_COUNT = ceil(EXPONENT * log(2, 10)) + 1
 
@@ -44,3 +43,6 @@ def run():
     print("The sum of digits in 2^{0} is {1}".format(EXPONENT, result))
 
 # Sample Output:
+# The sum of digits in 2^1000 is 1366
+#
+# Total running time for Problem16.py is 0.07098571890410678 seconds
