@@ -22,3 +22,4 @@ Runtime of all algorithms are `<1ms` on my test machine, except those listed bel
 * `Problem14.py (~3.3s)`
 * `Problem16.py (~7ms)`
 * `Problem17.py (~2ms)`
+* `Problem67.py (~5ms)`
