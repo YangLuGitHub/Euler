@@ -12,6 +12,8 @@
 #
 # Fairly simple to find all proper divisors of a number by factorizing the number into primes,
 # then generating all combinations of such primes and summing them.
+#
+# Much faster than naive solutions of integer factorization.
 from Problem10 import optimized_sieve
 
 MAX_NUM = 10000
