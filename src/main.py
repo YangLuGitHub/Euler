@@ -1,9 +1,10 @@
 # Generic benchmarking code
 # perf_counter() used for high precision
+import os
 from time import perf_counter
 
 # Constant Declarations
-MAX_SOLVED = 18  # Max number of Euler problems solved
+MAX_SOLVED = 67  # Max number of Euler problems solved
 BORDER = "-----"  # Border string printed around execution output of Problem#.py
 DEFAULT = str(MAX_SOLVED)  # Defaults to highest solved problem2
 
@@ -28,6 +29,7 @@ def isint(value):
 
 # Run Problem<solution_num>.py
 def run_solution(solution_num):
+    exec("from scripts import Problem{0}".format(solution_num))
     print("Problem{0}.py:".format(solution_num))
     start = perf_counter()
     exec("Problem{0}.run()".format(solution_num))
@@ -35,21 +37,24 @@ def run_solution(solution_num):
     print("Total running time for Problem{0}.py is {1} seconds".format(solution_num, perf_counter() - start))
 
 
+def run_if_file_exists(problem_index):
+    if os.path.isfile("scripts/Problem{0}.py".format(problem_index)):
+        run_solution(problem_index)
+    else:
+        print("Problem{0}.py does not exist!".format(problem_index))
+
 # If input is invalid, default to highest solved problem
 input_value = input("Evaluate Project Euler Problem #")
 if input_value == "all":
     print(BORDER)
     for i in range(1, MAX_SOLVED + 1):
-        exec("from scripts import Problem{0}".format(i))
-        run_solution(i)
+        run_if_file_exists(i)
         print(BORDER)
     exit(0)
 if not isint(input_value):
     input_value = DEFAULT
 
-# Imports
-exec("from scripts import Problem{0}".format(input_value))
-
 print(BORDER)
-run_solution(input_value)
+# Check if file exists
+run_if_file_exists(input_value)
 print(BORDER)
