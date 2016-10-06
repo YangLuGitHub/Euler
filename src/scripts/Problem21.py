@@ -17,12 +17,11 @@
 from Problem10 import optimized_sieve
 
 MAX_NUM = 10000
-PRIME_SIEVE = list(optimized_sieve(MAX_NUM))
 
 
-def factorize(num):
+def factorize(num, prime_sieve):
     factors = {}
-    for prime in PRIME_SIEVE:
+    for prime in prime_sieve:
         exponent_count = 0
         while num % prime == 0:
             exponent_count += 1
@@ -36,8 +35,8 @@ def factorize(num):
             return factors
 
 
-def sum_divisors(num):
-    prime_factors_dictionary = factorize(num)
+def sum_divisors(num, prime_sieve):
+    prime_factors_dictionary = factorize(num, prime_sieve)
     divisors = [1]
     for entry in prime_factors_dictionary.keys():
         new_divisors = []
@@ -50,10 +49,12 @@ def sum_divisors(num):
 
 
 def run():
+    prime_sieve = list(optimized_sieve(MAX_NUM))
+
     sum_of_factors_dictionary = {}
     amicable_sum = 0
     for i in range(1, MAX_NUM):
-        sum_of_factors_dictionary[i] = sum_divisors(i)
+        sum_of_factors_dictionary[i] = sum_divisors(i, prime_sieve)
 
     # Use dictionary to avoid computing sum of factors twice
     for num in sum_of_factors_dictionary.keys():
