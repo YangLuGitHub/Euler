@@ -28,4 +28,5 @@ Runtime of all algorithms are `<1ms` on my test machine, except those listed bel
 * `Problem25.py (~3ms)`
 * `Problem26.py (~0.27s)`
 * `Problem27.py (~4.4s)`
+* `Problem30.py (~0.66s)`
 * `Problem67.py (~5ms)`
