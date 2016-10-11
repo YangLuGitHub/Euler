@@ -24,9 +24,7 @@ def run():
 
     element_count = 0
 
-    two_to_max = []
-    for i in range(2, MAX_VALUE + 1):
-        two_to_max.append(i)
+    two_to_max = list(range(2, MAX_VALUE + 1))
 
     for i in range(2, MAX_VALUE + 1):
         if i not in used_indices:
