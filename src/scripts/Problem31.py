@@ -10,11 +10,12 @@
 #
 # Easy recursive tree-traversing algorithm.
 COIN_VALUES = [200, 100, 50, 20, 10, 5, 2, 1]
+CUTOFF = len(COIN_VALUES) - 2
 
 
 def sum_coin_counts(coin_level, remaining_amount):
-    if coin_level == len(COIN_VALUES) - 1:
-        return 1
+    if coin_level == CUTOFF:
+        return 1 + remaining_amount // 2
     else:
         return sum(sum_coin_counts(coin_level + 1, remaining_amount - coin_count * COIN_VALUES[coin_level])
                    for coin_count in range(0, 1 + remaining_amount // COIN_VALUES[coin_level]))
@@ -26,4 +27,4 @@ def run():
 # Sample Output:
 # The total number of ways that 2 pounds can be made with coins is 73682
 #
-# Total running time for Problem31.py is 0.03369012731279378 seconds
+# Total running time for Problem31.py is 0.0022060281774272435 seconds
